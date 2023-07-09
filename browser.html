@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sax-A-Boom</title>
+  <style><!--
+    body {
+      font-family: 'Segoe UI';
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+
+    #main {
+      display: inline-block;
+    }
+
+    #stopbutton {
+      width: 100%;
+      margin-top: 0.25rem
+    }
+
+    #loopdiv {
+      width: 100%;
+      text-align: left;
+    }
+	
+    @media screen and (max-width:767px) {
+      button {
+        font-size: 5rem;
+        width:5rem;
+      }
+      #loopdiv > label {
+        font-size: 5rem;
+      }
+      #loopdiv > label > input {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+  --></style>
+  <script><!--
+    // Configuration
+    let maxSounds = 8;
+    let loop = true;
+
+    // Variables
+    let lastSound = 0;
+
+    function stop(sound) {
+      if (sound == 0) { return; }
+      element = document.getElementById(sound);
+      element.pause();
+      element.currentTime = 0;
+    }
+
+    function play(sound) {
+      stop(lastSound);
+      element = document.getElementById(sound);
+      element.loop = loop;
+      element.play();
+      lastSound = sound;
+    }
+
+    function getKeypress(key) {
+      sound = parseInt(key);
+      if (sound > 0 && sound < maxSounds+1) {
+        play(sound);
+      } else {
+        stop(lastSound);
+      }
+    }
+  //--></script>
+</head>
+<body onKeyDown="getKeypress(event.key);">
+
+  <div id="main">  
+    <img src="assets/picture.jpg" alt="Sax-A-Boom">
+    <br>
+
+    <button onClick="play(this.textContent);">1</button>
+    <button onClick="play(this.textContent);">2</button>
+    <button onClick="play(this.textContent);">3</button>
+    <button onClick="play(this.textContent);">4</button>
+    <button onClick="play(this.textContent);">5</button>
+    <button onClick="play(this.textContent);">6</button>
+    <button onClick="play(this.textContent);">7</button>
+    <button onClick="play(this.textContent);">8</button>
+    <br>
+
+    <button id="stopbutton" onClick="stop(lastSound);">Stop</button>
+    <br>
+
+    <div id="loopdiv">
+      <label><input id="loop" type="checkbox" checked="checked" onclick="loop=this.checked"> Loop</label>
+    </div>
+
+  </div>
+
+  <audio id="1"><source src="sounds/1.ogg" type="audio/ogg"></audio>
+  <audio id="2"><source src="sounds/2.ogg" type="audio/ogg"></audio>
+  <audio id="3"><source src="sounds/3.ogg" type="audio/ogg"></audio>
+  <audio id="4"><source src="sounds/4.ogg" type="audio/ogg"></audio>
+  <audio id="5"><source src="sounds/5.ogg" type="audio/ogg"></audio>
+  <audio id="6"><source src="sounds/6.ogg" type="audio/ogg"></audio>
+  <audio id="7"><source src="sounds/7.ogg" type="audio/ogg"></audio>
+  <audio id="8"><source src="sounds/8.ogg" type="audio/ogg"></audio>
+
+  <script><!--
+    // Set default loop value
+    document.getElementById("loop").checked = loop;
+  --></script>
+</body>
+</html>

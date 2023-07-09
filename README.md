@@ -15,7 +15,9 @@ Play Sax-A-Boom like Jack Black: 7, 7, 7, 7, 3, 4, 4, 1, 8 \
 https://www.youtube.com/watch?v=cLmCJKT5ssw&t=66s
 
 ## Download
-Windows: [sax-a-boom.exe](https://github.com/alexgit2k/sax-a-boom/releases/latest/download/sax-a-boom.exe)
+Windows: [sax-a-boom.exe](https://github.com/alexgit2k/sax-a-boom/releases/latest/download/sax-a-boom.exe) \
+Browser: [sax-a-boom.zip](https://github.com/alexgit2k/sax-a-boom/releases/latest/download/sax-a-boom.zip) \
+Online: [htmlpreview](https://htmlpreview.github.io/?https://github.com/alexgit2k/sax-a-boom/blob/main/browser.html)
 
 ## Sources
 Original idea, sounds, graphics: Sax-A-Boom from Kawasaki® by DSI Electronics™ \
